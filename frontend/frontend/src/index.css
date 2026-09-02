@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap');
+
+@layer base {
+  :root {
+    --background: 80 20% 97%;
+    --foreground: 160 20% 12%;
+
+    --card: 80 15% 95%;
+    --card-foreground: 160 20% 12%;
+
+    --popover: 80 20% 97%;
+    --popover-foreground: 160 20% 12%;
+
+    --primary: 152 32% 38%;
+    --primary-foreground: 80 20% 97%;
+
+    --secondary: 42 30% 90%;
+    --secondary-foreground: 160 20% 12%;
+
+    --muted: 80 10% 92%;
+    --muted-foreground: 160 8% 48%;
+
+    --accent: 42 45% 78%;
+    --accent-foreground: 160 20% 12%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 80 20% 97%;
+
+    --border: 80 12% 88%;
+    --input: 80 12% 88%;
+    --ring: 152 32% 38%;
+
+    --radius: 0.75rem;
+
+    --sage: 152 32% 38%;
+    --sage-light: 152 24% 92%;
+    --sage-dark: 152 28% 22%;
+    --cream: 42 30% 94%;
+    --warm: 30 25% 96%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; filter: blur(4px); }
+  to { opacity: 1; filter: blur(0px); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
