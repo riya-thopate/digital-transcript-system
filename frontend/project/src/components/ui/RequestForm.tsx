@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import type { CreateDocumentRequest, DocumentType } from '@/types';
 import { FileUpload } from './FileUpload';
-import { documentTypeLabels } from '@/mocks/data';
 import { Loader2, Send } from 'lucide-react';
 import { toast } from './Toast';
+
+const documentTypeLabels: Record<DocumentType, string> = {
+  TRANSCRIPT: 'Official Transcript',
+  CERTIFICATE: 'Degree Certificate',
+  PROVISIONAL_CERTIFICATE: 'Provisional Certificate',
+  MARKSHEET: 'Marksheet',
+  BONAFIDE: 'Bonafide Certificate',
+  MIGRATION: 'Migration Certificate',
+};
 
 const docTypeOptions = Object.entries(documentTypeLabels) as [DocumentType, string][];
 
